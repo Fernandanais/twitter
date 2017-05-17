@@ -1,12 +1,21 @@
 function agregar(){
 
+
 	var tareas = document.getElementById('tarea').value;
 	document.getElementById('tarea').value = "";
+
+	if(tareas == null || tareas.length == 0){
+		alert('¡Error! Debe ingresar tarea');
+		return false;
+	}
+
 
 	var cont = document.getElementById('contenedor');
 	var nuevasTareas = document.createElement('div');
 	var textoNuevaTarea = document.createTextNode(tareas);
 	var elementoContenedor = document.createElement('span');
+
+
 
 	elementoContenedor.appendChild(textoNuevaTarea);
 	nuevasTareas.appendChild(elementoContenedor);
@@ -36,12 +45,4 @@ function agregar(){
 	cora.addEventListener('click', function(){
 		cora.classList.toggle('red');
 	})
-
-	if(tareas == null || tareas.length == 0){
-		alert('¡Error! Debe ingresar tarea');
-		return false;
-	}
-
-
-
 }
